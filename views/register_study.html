@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Record your study</title>
+ 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/register_study.css">
+ </head>
+ <body>
+ 	 <div class="sign-up-form">
+		  <div class="form-group">
+		    <label for="Subject" class="text-info">Subject</label>
+		    <input type="Subject" class="form-control" id="input-subject" aria-describedby="emailHelp" placeholder="Enter subject">
+		    <small id="emailHelp" class="form-text text-muted">Tell everybody what you are gonna study</small>
+		  </div>
+		  <div class="form-group">
+		    <label for="description" class="text-info">Description</label>
+		    <textarea type="description" class ="form-control" id="input-description" placeholder="description"></textarea>
+		  </div>
+	    <label for="Time" class="text-info">Time period</label>
+		  <div class="input-group">
+		  	<span class="input-group-addon" >From</span>
+			  <input type="text" class="form-control" placeholder="YYYY/MM/DD/00:00" aria-label="start-time" aria-describedby="start-time">
+			</div>
+		  <div class="input-group">
+				<span class="input-group-addon" >To </span>
+			  <input type="text" class="form-control" placeholder="YYYY/MM/DD/00:00" aria-label="end-time" aria-describedby="end-time">
+		  </div>
+		  <div class="tag-box">
+		  	<a id="add-tag" href="#">add tag</a>
+		  	<div class="input-group tag-input">
+				  <input type="text" class="form-control tag-content" placeholder="input your tag" aria-label="tag" aria-describedby="tag">
+					<span class="input-group-addon tag-submit" id="basic-addon2">Add </span>
+		  	</div>
+		  </div>
+		  <button type="submit" class="btn btn-primary self-btn">Record</button>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#add-tag").click(function(e) {
+				e.preventDefault();
+				if ($(".tag-input").css("display") !== "flex")
+					$(".tag-input").css("display","flex");
+				else
+					$(".tag-input").css("display", "none");
+			});
+			$(".input-group-addon.tag-submit").click(function() {
+				$(".tag-box").append("<div style='display:inline-block;margin-top:0.5em' ><span class='tag'>#" + $(".tag-content").val() + "</span><span class='close-tag' onclick='closetag(this)'>x</span></div>");
+				$(".tag-content").val("");
+				$(".tag-input").css("display","none");
+			});
+		});
+
+		function closetag(e) {
+			$(e).parent().remove();
+		}
+	</script>
+ </body>
+ </html>

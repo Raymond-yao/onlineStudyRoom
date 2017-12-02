@@ -1,0 +1,74 @@
+
+.sign-up-form {
+	border-radius: 25px;
+	padding: 20px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:100px;
+	background-color: #dae3f2;
+}
+
+.btn .btn-primary .self-btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+.self-btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+
+.tag-input {
+	display: none;
+}
+
+#add-tag {
+	width: 55px;
+	margin-top: 0.5em;
+	font-size: 15px;
+	display: block;
+}
+
+.self-btn:hover {
+	-webkit-transition: 1s;
+	transition: 1s;
+	width: 130px;
+	height: 40px;
+	border-color:  #9feef2;
+	background-color: #9feef2;
+	cursor: pointer;
+}
+
+.input-group-addon.tag-submit {
+	background-color: #0069d9;
+	color: #fff;
+	cursor: pointer;
+}
+
+.tag {
+	padding: 2px 10px 2px 10px;
+	margin-left: 5px;
+	box-sizing: border-box;
+	background-color: #84e8e1;
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.close-tag {
+	color: #fff;
+	padding: 1px 3px 5px 3px;
+	width: 5px;
+	background-color: grey;
+	cursor: pointer;
+}
+
+.close-tag:hover {
+	color: black;
+}
